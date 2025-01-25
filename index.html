@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Landing Page de Produtos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+</head>
+<body>
+    <div class="promotions-section">
+        <h6><i class="fa fa-truck"></i> Entrega em até 24 horas</h6>
+    </div>
+
+    <!-- Cabeçalho com logo e pesquisa -->
+    <header class="header-section" id="header">
+        <div class="container search-bar d-flex align-items-center justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="https://placehold.co/150x100" alt="Logo Produtos Veganos" style="height: 80px;">
+            </a>
+            <input type="text" id="search-input" class="form-control" placeholder="Digite o que você procura" oninput="searchProducts()">
+        </div>
+    </header>
+
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#alimentos-e-bebidas">Alimentos e Bebidas</a></li>
+                    <li class="nav-item"><span class="nav-link">|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#congelados-e-refrigerados">Congelados e Refrigerados</a></li>
+                    <li class="nav-item"><span class="nav-link">|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#suplementos">Suplementos</a></li>
+                    <li class="nav-item"><span class="nav-link">|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="#beleza-e-limpeza">Beleza e Limpeza</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção de Ordenação -->
+    <div class="sort-container container">
+        <select id="sort-select" class="form-select" onchange="sortProducts()">
+            <option value="default">Ordenar por</option>
+            <option value="price_asc">Preço: Menor para Maior</option>
+            <option value="price_desc">Preço: Maior para Menor</option>
+        </select>
+    </div>
+
+    <!-- Seções de categorias -->
+    <div class="container">
+        <section id="alimentos-e-bebidas" class="category-section">
+            <h2 class="category-title">Alimentos e Bebidas</h2>
+            <div id="category-alimentos-e-bebidas" class="row"></div>
+        </section>
+        <section id="congelados-e-refrigerados" class="category-section">
+            <h2 class="category-title">Congelados e Refrigerados</h2>
+            <div id="category-congelados-e-refrigerados" class="row"></div>
+        </section>
+        <section id="suplementos" class="category-section">
+            <h2 class="category-title">Suplementos</h2>
+            <div id="category-suplementos" class="row"></div>
+        </section>
+        <section id="beleza-e-limpeza" class="category-section">
+            <h2 class="category-title">Beleza e Limpeza</h2>
+            <div id="category-beleza-e-limpeza" class="row"></div>
+        </section>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="productDetailsModalLabel">
+                        Detalhes do Produto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Detalhes do produto serão inseridos dinamicamente -->
+                    <p id="productName"></p>
+                    <p id="productPrice"></p>
+                    <p id="productDescricao"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seleciona o cabeçalho
+        const header = document.getElementById("header");
+
+        // Adiciona um evento de rolagem na janela
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("header-fixed");
+            } else {
+                header.classList.remove("header-fixed");
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
