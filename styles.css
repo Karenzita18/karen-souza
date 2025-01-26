@@ -52,56 +52,67 @@ body {
 
 /* Barra de navegação */
 .navbar {
-    background-color: #588068cc; /* Cor de fundo clara */
+    background-color: #588068cc; 
 }
 
 .navbar .navbar-nav {
     display: flex;
-    justify-content: center; /* Centraliza os itens da navegação */
-    align-items: center; /* Alinha os itens verticalmente */
+    justify-content: center; 
+    align-items: center; 
     padding: 0;
     margin: 0;
 }
 
 .navbar .nav-item {
-    margin: 0 15px; /* Adiciona espaço entre os itens */
+    margin: 0 15px; 
 }
 
 .navbar .nav-link {
-    color: white; /* Cor do texto dos links */
-    font-weight: 500; /* Um pouco de peso na fonte */
-    padding: 8px 16px; /* Espaçamento interno nos links */
-    transition: color 0.3s; /* Transição suave para a cor */
+    color: white; 
+    font-weight: 500; 
+    padding: 8px 16px; 
+    transition: color 0.3s;
 }
 
 .navbar .nav-link:hover {
-    color: white; /* Cor de hover para os links */
-    text-decoration: none; /* Remove o sublinhado */
+    color: white; 
+    text-decoration: none; 
 }
 
 .navbar .navbar-toggler {
-    border: none; /* Remove a borda do botão de toggle */
+    border: none; 
 }
 
 .navbar .navbar-toggler-icon {
-    background-color: white; /* Cor do ícone do toggle */
+    background-color: white; 
 }
 
 .navbar .nav-link span {
-    color: white; /* Cor da barra separadora */
+    color: white; 
     font-weight: bold;
 }
 
 /* Responsividade */
 @media (max-width: 991px) {
     .navbar .navbar-nav {
-        flex-direction: column; /* Empilha os itens na versão mobile */
+        flex-direction: column; 
         text-align: center;
     }
 
-    .navbar .nav-item {
-        margin: 10px 0; /* Ajusta o espaço entre os itens no mobile */
+
+    .navbar .navbar-nav {
+        align-items: flex-start; 
+        padding: 0;
+        margin-top: 1rem;
     }
+
+    .navbar .nav-link {
+        color: white;
+        font-weight: 500;
+        padding: 8px 0px;
+        transition: color 0.3s;
+    }
+
 }
 
 
@@ -131,7 +142,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estilo para o seletor de ordenação de preços */
+
 .sort-container {
     display: flex;
     justify-content: flex-end;
@@ -141,6 +152,19 @@ body {
 #sort-select {
     width: 145px;
 }
+
+@media (max-width: 991px) {
+
+    .category-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .category-section {
+        padding: 25px 0;
+    }
+}
+
 
 
 /* Estilo do card */
@@ -156,7 +180,6 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilo da imagem do produto */
 .card-img-top {
     width: 80%;
     height: auto;
@@ -164,7 +187,6 @@ body {
     max-height: 300px;
 }
 
-/* Estilo do corpo do card */
 .card-body {
     display: flex;
     flex-direction: column; 
@@ -172,14 +194,12 @@ body {
     height: 100%; 
 }
 
-/* Estilo do título do produto */
 .card-title {
     font-size: 1rem;
     color: black;
     margin-bottom: 10px;
 }
 
-/* Estilo do texto do produto */
 .card-text {
     font-size: 1.1rem;
     color: black;
@@ -187,20 +207,7 @@ body {
     font-weight: bold;
 }
 
-/* Ajuste para telas menores (mobile) */
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.1rem;
-    }
 
-    .card-text {
-        font-size: 1.2rem; 
-    }
-
-}
-
-
-/* Estilo do botão */
 .btn {
     font-size: 0.9rem;
     padding: 4px 4px;
@@ -214,6 +221,18 @@ body {
 
 .btn:hover {
     background-color: #588068;
+}
+
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 1.2rem; 
+    }
+
 }
 
 
@@ -253,16 +272,16 @@ body {
 }
 
 
-/* Botão de fechar */
-.modal-footer .btn-secondary {
-    background-color: #588068; /* Cor do botão "Fechar" */
-    color: white; /* Cor do texto branco */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 8px 15px;
+
+/* FOOTER */
+.footer-section {
+    background-color: #1f3b2ce6;
+    color: #fff;
+   
 }
 
-.modal-footer .btn-secondary:hover {
-    background-color: #588068cc; /* Cor ao passar o mouse */
+@media (max-width: 767px) {
+    .footer-section {
+        text-align: center;
+    }
 }
-
-
