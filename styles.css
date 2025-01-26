@@ -22,20 +22,37 @@ body {
 
 /* HEADER */
 .header-section {
-    position: relative; 
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 2rem 0;
     background-color: #F5F3F5;
     color: white;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
+/* Cabeçalho fixo no topo */
 .header-fixed {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F3F5; /* Cor de fundo */
+    padding: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o nome da marca */
+.navbar-brand span {
+    font-size: 25px; 
+    font-weight: bold; 
+    color: #1f3b2ce6; 
+    letter-spacing: 2px; 
+    text-decoration: none; 
+    display: inline-block; 
 }
 
 /* BARRA DE PESQUISA */
@@ -45,11 +62,23 @@ body {
     align-items: center;
 }
 
+/* Ajuste no tamanho da barra de pesquisa */
 .search-bar input {
     width: 20%;
 }
 
+/* Responsividade para telas menores (mobile) */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column; /* Coloca os itens um abaixo do outro */
+        align-items: flex-start; /* Alinha à esquerda */
+        gap: 1rem; /* Espaçamento entre os elementos */
+    }
 
+    .search-bar input {
+        width: 100%; /* Barra de pesquisa ocupa toda a largura disponível */
+    }
+}
 /* Barra de navegação */
 .navbar {
     background-color: #588068cc; 
@@ -116,18 +145,9 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* Estilo para as seções de categorias */
 .category-section {
-    padding: 50px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #ddd;
 }
 
@@ -156,7 +176,7 @@ body {
 @media (max-width: 991px) {
 
     .category-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         text-align: center;
     }
     
@@ -178,13 +198,6 @@ body {
 
 .card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-img-top {
-    width: 80%;
-    height: auto;
-    object-fit: cover;
-    max-height: 300px;
 }
 
 .card-body {
@@ -230,7 +243,7 @@ body {
     }
 
     .card-text {
-        font-size: 1.2rem; 
+        font-size: 1.3rem; 
     }
 
 }
@@ -238,28 +251,28 @@ body {
 
 /* Modal */
 .modal-content {
-    background-color: #333; /* Fundo escuro para destacar o conteúdo */
-    color: #fff; /* Cor do texto branco */
-    border-radius: 10px; /* Bordas arredondadas */
-    border: none; /* Remover borda */
+    background-color: #333; 
+    color: #fff; 
+    border-radius: 10px; 
+    border: none; 
     padding: 20px;
 }
 
 .modal-header {
-    border-bottom: 1px solid #444; /* Linha sutil na parte inferior do cabeçalho */
+    border-bottom: 1px solid #444; 
 }
 
 .modal-title {
-    color: #3E6B3B; /* Título branco */
-    font-size: 1.4rem; /* Aumenta o tamanho da fonte */
+    color: #3E6B3B; 
+    font-size: 1.4rem; 
     font-weight: 500;
 }
 
 .btn-close {
     background: none;
     border: none;
-    color: #fff; /* Botão de fechar branco */
-    font-size: 1.5rem; /* Aumenta o tamanho do ícone de fechar */
+    color: #fff; 
+    font-size: 1.5rem; 
 }
 
 .modal-body {
@@ -267,11 +280,9 @@ body {
 }
 
 #productName, #productPrice, #productDescricao {
-    font-size: 1rem; /* Aumenta o tamanho da fonte para os detalhes */
-    margin-bottom: 15px; /* Espaço entre os elementos */
+    font-size: 1rem; 
+    margin-bottom: 15px; 
 }
-
-
 
 /* FOOTER */
 .footer-section {
